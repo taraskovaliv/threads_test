@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Define variables
-JDK_VERSION="jdk-11.0.26+4"
-JDK_URL="https://github.com/adoptium/temurin11-binaries/releases/download/$JDK_VERSION/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4.tar.gz"
+JDK_URL="https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26+4/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4.tar.gz"
 JAVA_ARCHIVE="java11.tar.gz"
 JAVA_DIR="java11"
 JAR_URL="https://raw.githubusercontent.com/taraskovaliv/treads_test/refs/heads/master/src/main/resources/treads.jar"
@@ -26,4 +25,4 @@ else
 fi
 
 echo "Running JAR file: $JAR_FILE"
-"$JAVA_DIR/$JDK_VERSION/bin/java" -jar "$JAR_FILE"
+"$JAVA_DIR/bin/java" -jar "$JAR_FILE"
