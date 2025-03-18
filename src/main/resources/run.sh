@@ -20,7 +20,7 @@ mkdir -p "$JAVA_DIR"
 tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
 
 echo "Running JAR file: $JAR_FILE"
-"$JAVA_DIR/bin/java" -jar "$JAR_FILE" dev.kovaliv.Main
+"$JAVA_DIR/bin/java" -cp "$JAR_FILE" dev.kovaliv.Main
 
 rm "$JAVA_ARCHIVE"
 rm -rf "$JAVA_DIR"
