@@ -18,10 +18,10 @@ fi
 curl -L "$JDK_URL" -o "$JAVA_ARCHIVE"
 mkdir -p "$JAVA_DIR"
 tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
+rm "$JAVA_ARCHIVE"
 
 echo "Running JAR file: $JAR_FILE"
 "$JAVA_DIR/bin/java" -cp "$JAR_FILE" dev.kovaliv.Main
 
-rm "$JAVA_ARCHIVE"
 rm -rf "$JAVA_DIR"
 rm "$JAR_FILE"
