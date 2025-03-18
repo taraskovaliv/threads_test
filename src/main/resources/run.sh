@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-JDK_URL="https://github.com/adoptium/temurin11-binaries/archive/refs/tags/11.0.20+8.tar.gz"
+JDK_URL="https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26%2B4/OpenJDK11U-debugimage_aarch64_linux_hotspot_11.0.26_4.tar.gz"
 JAVA_ARCHIVE="java11.tar.gz"
 JAVA_DIR="./java11"
 JAR_URL="https://raw.githubusercontent.com/taraskovaliv/treads_test/refs/heads/master/src/main/resources/treads.jar"
