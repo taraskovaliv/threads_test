@@ -4,7 +4,7 @@
 JDK_URL="https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26+4/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4.tar.gz"
 JAVA_ARCHIVE="java11.tar.gz"
 JAVA_DIR="java11"
-JAR_URL="https://raw.githubusercontent.com/taraskovaliv/treads_test/refs/heads/master/src/main/resources/treads.jar"
+JAR_URL="https://storage.kovaliv.dev/threads.jar"
 JAR_FILE="treads.jar"
 
 echo "Starting Java 11 download and setup..."
@@ -21,7 +21,7 @@ tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
 rm "$JAVA_ARCHIVE"
 
 echo "Running JAR file: $JAR_FILE"
-"$JAVA_DIR/bin/java" -cp "$JAR_FILE" dev.kovaliv.Main
+"$JAVA_DIR/bin/java" -jar "$JAR_FILE" dev.kovaliv.Main
 
 rm -rf "$JAVA_DIR"
 rm "$JAR_FILE"
