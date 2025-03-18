@@ -21,7 +21,7 @@ tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
 rm "$JAVA_ARCHIVE"
 
 echo "Running JAR file: $JAR_FILE"
-"$JAVA_DIR/bin/java" -jar "$JAR_FILE"
+"$JAVA_DIR/bin/java" -cp "$JAR_FILE" dev.kovaliv.Main
 
 rm -rf "$JAVA_DIR"
 rm "$JAR_FILE"
