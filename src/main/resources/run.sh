@@ -15,14 +15,13 @@ if [ ! -f "$JAR_FILE" ]; then
     exit 1
 fi
 
-if [ ! -d "$JAVA_DIR" ]; then
-    curl -L "$JDK_URL" -o "$JAVA_ARCHIVE"
-    mkdir -p "$JAVA_DIR"
-    tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
-    rm "$JAVA_ARCHIVE"
-else
-    echo "Found existing Java installation at $JAVA_DIR"
-fi
+curl -L "$JDK_URL" -o "$JAVA_ARCHIVE"
+mkdir -p "$JAVA_DIR"
+tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
 
 echo "Running JAR file: $JAR_FILE"
 "$JAVA_DIR/bin/java" -jar "$JAR_FILE"
+
+rm "$JAVA_ARCHIVE"
+rm -rf "$JAVA_DIR"
+rm "$JAR_FILE"
