@@ -13,23 +13,4 @@ public class TimeUtils {
         }
         return time;
     }
-
-    public static class AvgTime {
-        private long sum;
-        private int count;
-
-        public AvgTime() {
-            this.sum = 0;
-            this.count = 0;
-        }
-
-        public void addTime(long time) {
-            sum += time;
-            count++;
-        }
-
-        public long getAvgTime() {
-            return sum / count;
-        }
-    }
 }
