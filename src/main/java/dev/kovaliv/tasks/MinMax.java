@@ -4,12 +4,9 @@ import dev.kovaliv.data.Max;
 import dev.kovaliv.data.Min;
 import dev.kovaliv.data.Result;
 import dev.kovaliv.utils.DataUtils;
-import dev.kovaliv.utils.UrlUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +26,7 @@ public class MinMax implements Task {
     @Override
     public List<Result> run(int maxThreads) {
         List<Result> results = new ArrayList<>(maxThreads * 6);
-        for (int i = 10_000; i <= 1_000_000_000; i *= 10) {
+        for (long i = 10_000; i <= 1_000_000_000_000L; i *= 10) {
             long[] numbers = DataUtils.generateNumbers(i);
             for (int j = maxThreads; j > 0; j--) {
                 Result result = runByThreads(numbers, j);
